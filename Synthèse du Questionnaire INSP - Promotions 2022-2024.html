@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/Thibault/Downloads/index_10.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthèse du Questionnaire INSP - Promotions 2022-2024</title>
+    
+    <!-- Font Awesome via CDN -->
+    <link rel="stylesheet" href="./Synthèse du Questionnaire INSP - Promotions 2022-2024_files/all.min.css">
+    <!-- Google Fonts via CDN -->
+    <link href="./Synthèse du Questionnaire INSP - Promotions 2022-2024_files/css2" rel="stylesheet">
+    <!-- Chart.js via CDN -->
+    <script src="./Synthèse du Questionnaire INSP - Promotions 2022-2024_files/chart.umd.min.js.téléchargement"></script>
+    
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+
+            --primary-darkest: #2d3a45;
+            --primary-dark: #3d4f5f;
+            --primary-medium: #4a5d6d;
+            --primary-light: #5a7088;
+            --primary-lighter: #6b8399;
+            --accent-blue: #5a7088;
+            --accent-light: #7a90a8;
+            --accent-lighter: #99afc5;
+            
+
+            --gray-darkest: #2d3a45;
+            --gray-dark: #3d4f5f;
+            --gray-medium: #5a6978;
+            --gray-base: #7a8794;
+            --gray-light: #d4d9de;
+            --gray-lighter: #f5f6f8;
+            --gray-lightest: #f8f9fa;
+            
+            --white: #ffffff;
+            --success: #5a9178;
+            --warning: #d89441;
+            --danger: #c5584a;
+        }
+        
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-dark);
+            background: linear-gradient(135deg, var(--gray-lightest) 0%, var(--white) 50%, var(--gray-lightest) 100%);
+            min-height: 100vh;
+        }
+        
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        
+
+        header {
+            background: linear-gradient(135deg, #3d4f5f 0%, #4a5d6d 100%);
+            color: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        .header-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        
+        header h2 {
+            font-size: 1.15rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .header-stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        
+        .header-stat {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 16px 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .header-stat:hover {
+            background: rgba(255,255,255,0.18);
+            transform: translateY(-2px);
+        }
+        
+        .header-stat i {
+            font-size: 1.5rem;
+            opacity: 0.85;
+            margin-bottom: 8px;
+        }
+        
+        .header-stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .header-stat-label {
+            font-size: 0.8rem;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+        
+        .header-meta {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .header-meta-item {
+            text-align: center;
+        }
+        
+        .header-meta-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.7;
+        }
+        
+        .header-meta-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        
+        
+
+        .section {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .section h2 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--gray-light);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2 i {
+            margin-right: 10px;
+            color: var(--accent-blue);
+            font-size: 1.3rem;
+        }
+        
+
+        .chart-container {
+            position: relative;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--gray-lighter) 0%, var(--gray-lightest) 100%);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        
+        .chart-container h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .chart-container h3 i {
+            margin-right: 8px;
+            color: var(--accent-blue);
+            font-size: 1rem;
+        }
+        
+
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+        }
+        
+        .chart-wrapper.small {
+            height: 320px;
+        }
+        
+        .chart-wrapper.medium {
+            height: 280px;
+        }
+        
+        .chart-wrapper.horizontal {
+            height: 350px;
+        }
+        
+        .chart-wrapper.large {
+            height: 400px;
+        }
+        
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            align-items: start;
+        }
+        
+
+        .charts-grid-three {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            align-items: start;
+        }
+        
+        @media (max-width: 1200px) {
+            .charts-grid-three {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            .charts-grid-three {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
+        
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        th {
+            background: var(--primary-dark);
+            color: var(--white);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: var(--gray-lighter);
+        }
+
+        tr:hover {
+            background: var(--gray-light);
+        }
+        
+        td:nth-child(2), td:nth-child(3) {
+            text-align: center;
+            font-weight: 500;
+        }
+        
+
+        .insight {
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .insight.positive {
+            background: linear-gradient(135deg, var(--success) 0%, #38a169 100%);
+            color: var(--white);
+        }
+        .insight.warning {
+            background: linear-gradient(135deg, var(--warning) 0%, #c97228 100%);
+            color: var(--white);
+        }
+        .insight.danger {
+            background: linear-gradient(135deg, var(--danger) 0%, #c53030 100%);
+            color: var(--white);
+        }
+        .insight.info {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--primary-light) 100%);
+            color: var(--white);
+        }
+        
+        .insight h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .insight h3 i {
+            margin-right: 8px;
+            color: var(--white);
+        }
+        
+        .insight p {
+            opacity: 0.95;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+
+        .score-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .score-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-lighter) 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--gray-light);
+            transition: transform 0.2s ease;
+        }
+        
+        .score-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .score-card h4 {
+            color: var(--gray-medium);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .score-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+        
+        .score-max {
+            font-size: 1.2rem;
+            color: var(--gray-base);
+        }
+        
+        .score-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--gray-light);
+            border-radius: 4px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+        
+        .score-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+        
+        .score-low { background: var(--danger); }
+        .score-medium { background: var(--warning); }
+        .score-high { background: var(--success); }
+        
+
+        footer {
+            background: var(--gray-dark);
+            color: var(--white);
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 0.3rem;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            header {
+                padding: 30px 20px;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header h2 {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            .section h2 {
+                font-size: 1.3rem;
+            }
+
+            .chart-container {
+                padding: 0.8rem;
+                margin: 1rem 0;
+            }
+            
+            .chart-wrapper {
+                height: 250px;
+            }
+            
+            .chart-wrapper.small {
+                height: 280px;
+            }
+            
+            .chart-wrapper.horizontal {
+                height: 300px;
+            }
+            
+            th, td {
+                padding: 0.6rem;
+                font-size: 0.85rem;
+            }
+
+            .insight {
+                padding: 1rem;
+            }
+            
+            .score-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-badge">Mémoire de recherche – Master 2 Sociologie EHESS</div>
+        <h1>Analyse du Questionnaire INSP</h1>
+        <h2>Synthèse factuelle des réponses des promotions Guillaume Apollinaire (2022-2023) et Joséphine Baker (2023-2024)</h2>
+        
+        <div class="header-stats">
+            <div class="header-stat">
+                <i class="fas fa-users"></i>
+                <span class="header-stat-value">52</span>
+                <span class="header-stat-label">Répondants</span>
+            </div>
+            <div class="header-stat">
+                <i class="fas fa-clipboard-question"></i>
+                <span class="header-stat-value">17</span>
+                <span class="header-stat-label">Questions analysées</span>
+            </div>
+            <div class="header-stat">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="header-stat-value">2</span>
+                <span class="header-stat-label">Promotions étudiées</span>
+            </div>
+        </div>
+
+        <div class="header-meta">
+            <div class="header-meta-item">
+                <span class="header-meta-label">Auteur</span>
+                <span class="header-meta-value">Thibault Lalut</span>
+            </div>
+            <div class="header-meta-item">
+                <span class="header-meta-label">Direction</span>
+                <span class="header-meta-value">François Denord (CESSP-CNRS)</span>
+            </div>
+            <div class="header-meta-item">
+                <span class="header-meta-label">Institution</span>
+                <span class="header-meta-value">EHESS</span>
+            </div>
+            <div class="header-meta-item">
+                <span class="header-meta-label">Statut</span>
+                <span class="header-meta-value">Document confidentiel</span>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        
+        <div class="section">
+            <h2><i class="fas fa-user-circle"></i> 1. Profil des répondants</h2>
+            
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3><i class="fas fa-chart-pie"></i> Répartition par promotion</h3>
+                    <div class="chart-wrapper small">
+                        <canvas id="chart-promotion" width="594" height="320" style="display: block; box-sizing: border-box; height: 320px; width: 594px;"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3><i class="fas fa-chart-pie"></i> Voies d'accès</h3>
+                    <div class="chart-wrapper small">
+                        <canvas id="chart-voie-acces" width="594" height="320" style="display: block; box-sizing: border-box; height: 320px; width: 594px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="insight info">
+                <h3><i class="fas fa-lightbulb"></i> Observation clé</h3>
+                <p>La répartition équilibrée entre les deux promotions (44.2% et 55.8%) assure une représentativité des résultats. La diversité des voies d'accès montre que l'INSP attire des profils variés, avec une prédominance des concours internes (44.2%) et externes (40.4%) traditionnels.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-magnifying-glass-chart"></i> 2. Perception et attentes vis-à-vis de l'INSP</h2>
+            
+            <div class="chart-container">
+                <h3><i class="fas fa-chart-bar"></i> Connaissance préalable de l'INSP</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chart-connaissance" width="1254" height="300" style="display: block; box-sizing: border-box; height: 300px; width: 1254px;"></canvas>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Niveau de connaissance avant candidature</th>
+                        <th>Nombre</th>
+                        <th>Pourcentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Je connaissais bien l'institution et l'identifiais clairement comme l'héritière de l'ENA</td>
+                        <td>40</td>
+                        <td>76.92%</td>
+                    </tr>
+                    <tr>
+                        <td>Je disposais d'informations précises, mais percevais une école encore en redéfinition</td>
+                        <td>7</td>
+                        <td>13.46%</td>
+                    </tr>
+                    <tr>
+                        <td>Je connaissais peu l'école, mais l'ai ciblée pour ses débouchés professionnels</td>
+                        <td>4</td>
+                        <td>7.69%</td>
+                    </tr>
+                    <tr>
+                        <td>J'avais une connaissance partielle de l'INSP et une image assez floue de son rôle réel</td>
+                        <td>1</td>
+                        <td>1.92%</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="chart-container">
+                <h3><i class="fas fa-chart-bar"></i> Motivations de candidature</h3>
+                <div class="chart-wrapper medium">
+                    <canvas id="chart-motivations" width="1254" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 1254px;"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-chalkboard-user"></i> 3. Évaluation de la formation</h2>
+            
+            <div class="chart-container">
+                <h3><i class="fas fa-chart-line"></i> Correspondance aux attentes</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chart-attentes" width="1254" height="300" style="display: block; box-sizing: border-box; height: 300px; width: 1254px;"></canvas>
+                </div>
+            </div>
+            
+            <div class="insight warning">
+                <h3><i class="fas fa-triangle-exclamation"></i> Point d'attention</h3>
+                <p>Près de la moitié des répondants (48.1%) trouvent la formation décevante ou en décalage avec leurs attentes. Seuls 9.6% estiment que la formation a dépassé leurs attentes, ce qui souligne un enjeu important d'alignement entre les promesses et la réalité de la formation.</p>
+            </div>
+            
+            <div class="charts-grid-three">
+                <div class="chart-container">
+                    <h3><i class="fas fa-chart-pie"></i> Perception du tronc commun inter-écoles</h3>
+                    <div class="chart-wrapper small">
+                        <canvas id="chart-tronc-commun" width="374" height="320" style="display: block; box-sizing: border-box; height: 320px; width: 374px;"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3><i class="fas fa-cogs"></i> Influence des réformes récentes</h3>
+                    <div class="chart-wrapper small">
+                        <canvas id="chart-reformes-influence" width="374" height="320" style="display: block; box-sizing: border-box; height: 320px; width: 374px;"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3><i class="fas fa-tasks"></i> Pertinence de l'approche par compétences</h3>
+                    <div class="chart-wrapper small">
+                        <canvas id="chart-approche-competences" width="374" height="320" style="display: block; box-sizing: border-box; height: 320px; width: 374px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--primary-dark);"><i class="fas fa-star-half-alt" style="color: var(--accent-blue); margin-right: 8px;"></i> Évaluation par notes (sur 5)</h3>
+            <div class="score-cards">
+                <div class="score-card">
+                    <h4>Utilité des compétences numériques</h4>
+                    <div class="score-value">1.0</div>
+                    <div class="score-max">/5</div>
+                    <div class="score-bar">
+                        <div class="score-bar-fill score-low" style="width: 20%;"></div>
+                    </div>
+                </div>
+                <div class="score-card">
+                    <h4>Efficacité des méthodes d'évaluation</h4>
+                    <div class="score-value">1.47</div>
+                    <div class="score-max">/5</div>
+                    <div class="score-bar">
+                        <div class="score-bar-fill score-low" style="width: 29.4%;"></div>
+                    </div>
+                </div>
+                <div class="score-card">
+                    <h4>Efficacité globale de la formation</h4>
+                    <div class="score-value">2.71</div>
+                    <div class="score-max">/5</div>
+                    <div class="score-bar">
+                        <div class="score-bar-fill score-medium" style="width: 54.2%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="insight danger">
+                <h3><i class="fas fa-chart-line"></i> Évaluations critiques</h3>
+                <p>Les notes moyennes révèlent des évaluations particulièrement basses : les compétences numériques (1/5) et les méthodes d'évaluation (1.47/5) sont jugées très insuffisantes. L'efficacité globale de la formation obtient une note moyenne de 2.71/5, confirmant les insatisfactions exprimées dans les autres questions.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-lightbulb-on"></i> 4. Points forts et axes d'amélioration</h2>
+            
+            <div class="chart-container">
+                <h3><i class="fas fa-check-circle"></i> Parties les plus intéressantes</h3>
+                <div class="chart-wrapper medium">
+                    <canvas id="chart-interessant" width="1254" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 1254px;"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3><i class="fas fa-wrench"></i> Aspects à améliorer</h3>
+                <div class="chart-wrapper horizontal">
+                    <canvas id="chart-ameliorations" width="1254" height="350" style="display: block; box-sizing: border-box; height: 350px; width: 1254px;"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-people-group"></i> 5. Vie étudiante et développement du réseau</h2>
+            
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3><i class="fas fa-network-wired"></i> Développement du réseau professionnel</h3>
+                    <div class="chart-wrapper small">
+                        <canvas id="chart-reseau" width="594" height="320" style="display: block; box-sizing: border-box; height: 320px; width: 594px;"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3><i class="fas fa-comments"></i> Ambiance générale</h3>
+                    <div class="chart-wrapper medium">
+                        <canvas id="chart-ambiance" width="594" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 594px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="insight positive">
+                <h3><i class="fas fa-thumbs-up"></i> Point positif</h3>
+                <p>88.5% des répondants ont développé significativement ou très fortement leur réseau professionnel. L'ambiance est perçue comme conviviale (76.9%) malgré des aspects compétitifs (61.5%) et stressants (50%), témoignant d'un environnement exigeant mais humain.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-chart-simple"></i> 6. Bilan et perspectives de réforme</h2>
+            
+            <div class="chart-container">
+                <h3><i class="fas fa-sort-numeric-down"></i> Évaluation du système de classement</h3>
+                <div class="chart-wrapper horizontal">
+                    <canvas id="chart-classement" width="1254" height="350" style="display: block; box-sizing: border-box; height: 350px; width: 1254px;"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3><i class="fas fa-scroll"></i> Capacité de l'INSP à répondre aux critiques de l'ENA</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chart-reforme" width="1254" height="300" style="display: block; box-sizing: border-box; height: 300px; width: 1254px;"></canvas>
+                </div>
+            </div>
+            
+            <div class="insight danger">
+                <h3><i class="fas fa-vial-virus"></i> Analyse critique</h3>
+                <p>La majorité des répondants restent sceptiques quant à la capacité de l'INSP à véritablement se transformer : 50% y voient soit des ajustements de surface (32.7%), soit une persistance des schémas traditionnels (17.3%). Seuls 11.5% perçoivent une transformation authentique (9.6%) ou des avancées notables (1.9%).</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p><i class="fas fa-university"></i> EHESS - École des Hautes Études en Sciences Sociales | CNRS - Centre National de la Recherche Scientifique</p>
+            <p><i class="fas fa-copyright"></i> 2025 - Document confidentiel réservé à un usage académique</p>
+        </div>
+    </footer>
+    
+    <script>
+
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.font.size = 13;
+        Chart.defaults.plugins.legend.position = 'bottom';
+        Chart.defaults.plugins.legend.labels.padding = 12;
+        Chart.defaults.plugins.legend.labels.usePointStyle = true;
+        Chart.defaults.plugins.legend.labels.font = { size: 12 };
+        Chart.defaults.plugins.tooltip.padding = 10;
+        Chart.defaults.plugins.tooltip.cornerRadius = 6;
+        
+
+        const colors = {
+            primary: ['#2d3a45', '#3d4f5f', '#5a7088', '#7089a3', '#8ba3bb', '#a3b8ce', '#b8c9db', '#cdd9e6'],
+            gradient: function(ctx, color1, color2) {
+                const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+                gradient.addColorStop(0, color1);
+                gradient.addColorStop(1, color2);
+                return gradient;
+            }
+        };
+        
+
+        const questionsData = [
+            {
+                question: "Q1 - De quelle promotion faisiez-vous parti à l'INSP ?",
+                data: [
+                    {label: "Promotion 2022-2023 : Guillaume Apollinaire", count: 23, percentage: 44.23},
+                    {label: "Promotion 2023-2024 : Joséphine Baker", count: 29, percentage: 55.77}
+                ]
+            },
+            {
+                question: "Q2 - Par quelle voie d'accès aviez-vous intégré l'INSP ?",
+                data: [
+                    {label: "Concours interne", count: 23, percentage: 44.23},
+                    {label: "Concours externe", count: 21, percentage: 40.38},
+                    {label: "Troisième concours", count: 5, percentage: 9.62},
+                    {label: "Concours externe Docteurs", count: 3, percentage: 5.77}
+                ]
+            },
+            {
+                question: "Q3 - Quelle était votre connaissance et perception de l'INSP avant votre candidature ?",
+                data: [
+                    {label: "Je connaissais bien l'institution et l'identifiais clairement comme l'héritière de l'ENA", count: 40, percentage: 76.92},
+                    {label: "Je disposais d'informations précises, mais percevais une école encore en redéfinition", count: 7, percentage: 13.46},
+                    {label: "Je connaissais peu l'école, mais l'ai ciblée pour ses débouchés professionnels", count: 4, percentage: 7.69},
+                    {label: "J'avais une connaissance partielle de l'INSP et une image assez floue de son rôle réel", count: 1, percentage: 1.92}
+                ]
+            },
+            {
+                question: "Q4 - Pourquoi aviez-vous choisi l'INSP pour votre formation ?",
+                data: [
+                    {label: "Attrait pour l'administration publique et le service de l'État", count: 51, percentage: 98.08},
+                    {label: "Opportunités de carrière et prestige de l'institution", count: 39, percentage: 75.00},
+                    {label: "Diversité des expériences professionnelles proposées", count: 23, percentage: 44.23},
+                    {label: "Acquisition de compétences spécifiques pour la haute fonction publique", count: 12, percentage: 23.08},
+                    {label: "Intérêt pour les nouvelles méthodes pédagogiques et le tronc commun", count: 2, percentage: 3.85}
+                ]
+            },
+            {
+                question: "Q5 - Dans quelle mesure la formation à l'INSP correspondait elle à vos attentes initiales ?",
+                data: [
+                    {label: "Elle s'est révélée en partie décevante ou en décalage avec mes attentes", count: 25, percentage: 48.08},
+                    {label: "Elle a globalement confirmé ce que j'en attendais", count: 18, percentage: 34.62},
+                    {label: "Elle a dépassé mes attentes sur plusieurs aspects", count: 5, percentage: 9.62},
+                    {label: "Je ne savais pas vraiment à quoi m'attendre en y entrant", count: 4, percentage: 7.69}
+                ]
+            },
+            {
+                question: "Q6 - Les réformes récentes de l'INSP ont-elles influencé votre décision de rejoindre l'institut ?",
+                data: [
+                    {label: "Je n'en avais pas connaissance au moment de ma candidature", count: 23, percentage: 44.23},
+                    {label: "Je les connaissais, mais elles n'ont pas influencé ma décision", count: 22, percentage: 42.31},
+                    {label: "Elles ont compté parmi d'autres éléments, sans être décisives", count: 5, percentage: 9.62},
+                    {label: "Oui, ces réformes ont clairement motivé ma candidature", count: 2, percentage: 3.85}
+                ]
+            },
+            {
+                question: "Q7 - Quelle(s) partie(s) de votre formation vous ont semblé la/les plus intéressante(s) ?",
+                data: [
+                    {label: "Stages et missions", count: 50, percentage: 96.15},
+                    {label: "Rencontres avec des professionnels du secteur public", count: 18, percentage: 34.62},
+                    {label: "Autres", count: 3, percentage: 5.77},
+                    {label: "Enseignements d'approfondissements", count: 3, percentage: 5.77},
+                    {label: "Enseignements communs", count: 2, percentage: 3.85},
+                    {label: "Tronc commun inter-écoles", count: 0, percentage: 0.00}
+                ]
+            },
+            {
+                question: "Q8 - Le tronc commun inter-écoles",
+                data: [
+                    {label: "Trop éloigné de mes besoins réels", count: 32, percentage: 61.54},
+                    {label: "Intéressant sur certains aspects, mais trop fragmenté", count: 20, percentage: 38.46}
+                ]
+            },
+            {
+                question: "Q9 - L'approche par compétences et les mises en situation récurrentes vous ont-elles semblées pertinentes ?",
+                data: [
+                    {label: "Oui, méthode pertinente et mieux adaptée", count: 30, percentage: 57.69},
+                    {label: "Utile mais secondaire", count: 11, percentage: 21.15},
+                    {label: "Non, peu adaptée à la complexité des postes", count: 11, percentage: 21.15}
+                ]
+            },
+            {
+                question: "Q13 - Évaluation du système de classement de sortie",
+                data: [
+                    {label: "Pressurisant : logique de compétition constante", count: 35, percentage: 67.31},
+                    {label: "Inégalitaire : valorise ceux qui maîtrisent les codes", count: 34, percentage: 65.38},
+                    {label: "Trop scolaire : ignore les compétences pratiques", count: 25, percentage: 48.08},
+                    {label: "Utile : clarifie les règles du jeu", count: 23, percentage: 44.23},
+                    {label: "Juste et lisible : reflète efforts et résultats", count: 3, percentage: 5.77}
+                ]
+            },
+            {
+                question: "Q14 - Développement du réseau professionnel",
+                data: [
+                    {label: "Significativement - Relations professionnelles intéressantes", count: 23, percentage: 44.23},
+                    {label: "Très fortement - Nombreux contacts utiles", count: 23, percentage: 44.23},
+                    {label: "Modérément - Quelques contacts, impact limité", count: 6, percentage: 11.54}
+                ]
+            },
+            {
+                question: "Q15 - Ambiance générale à l'INSP",
+                data: [
+                    {label: "Conviviale", count: 40, percentage: 76.92},
+                    {label: "Compétitive", count: 32, percentage: 61.54},
+                    {label: "Stressante", count: 26, percentage: 50.00},
+                    {label: "Stimulante intellectuellement", count: 18, percentage: 34.62},
+                    {label: "Studieuse et exigeante", count: 15, percentage: 28.85},
+                    {label: "Collaborative et solidaire", count: 13, percentage: 25.00},
+                    {label: "Diversifiée et inclusive", count: 4, percentage: 7.69}
+                ]
+            },
+            {
+                question: "Q16 - Aspects de la formation à améliorer",
+                data: [
+                    {label: "Contenu des enseignements théoriques", count: 47, percentage: 90.38},
+                    {label: "Accompagnement vers la prise de poste", count: 28, percentage: 53.85},
+                    {label: "Gestion administrative et communication", count: 24, percentage: 46.15},
+                    {label: "Personnalisation du parcours", count: 23, percentage: 44.23},
+                    {label: "Liens avec les employeurs publics", count: 21, percentage: 40.38},
+                    {label: "Équilibre entre théorie et pratique", count: 16, percentage: 30.77},
+                    {label: "Diversité des intervenants", count: 12, percentage: 23.08},
+                    {label: "Articulation entre les enseignements", count: 11, percentage: 21.15}
+                ]
+            },
+            {
+                question: "Q17 - Capacité de l'INSP à répondre aux critiques de l'ENA",
+                data: [
+                    {label: "Compromis entre héritage et aspirations contemporaines", count: 20, percentage: 38.46},
+                    {label: "Ajustements de surface masquant une continuité", count: 17, percentage: 32.69},
+                    {label: "Persistance des schémas traditionnels de l'ENA", count: 9, percentage: 17.31},
+                    {label: "Métamorphose institutionnelle authentique", count: 5, percentage: 9.62},
+                    {label: "Avancées notables, réelle volonté de changement", count: 1, percentage: 1.92}
+                ]
+            }
+        ];
+        
+
+        function createPieChart(canvasId, data) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: data.map(d => d.label),
+                    datasets: [{
+                        data: data.map(d => d.percentage),
+                        backgroundColor: colors.primary,
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            align: 'start',
+                            labels: {
+                                padding: 12,
+                                font: { size: 12 },
+                                usePointStyle: true,
+                                boxWidth: 14,
+                                generateLabels: function(chart) {
+                                    const data = chart.data;
+                                    return data.labels.map((label, i) => ({
+                                        text: `${label} (${data.datasets[0].data[i].toFixed(1)}%)`,
+                                        fillStyle: data.datasets[0].backgroundColor[i],
+                                        hidden: false,
+                                        index: i
+                                    }));
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(61, 79, 95, 0.95)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: colors.primary[2],
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.toFixed(1) + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+
+        function createBarChart(canvasId, data, horizontal = false) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.map(d => d.label),
+                    datasets: [{
+                        data: data.map(d => d.percentage),
+                        backgroundColor: colors.primary[3],
+                        borderColor: colors.primary[1],
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: horizontal ? 'y' : 'x',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(61, 79, 95, 0.95)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: colors.primary[2],
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed[horizontal ? 'x' : 'y'].toFixed(1) + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { 
+                                display: !horizontal,
+                                color: 'rgba(226, 232, 240, 0.3)'
+                            },
+                            ticks: { 
+                                font: { size: 12 },
+                                autoSkip: false,
+                                maxRotation: horizontal ? 0 : 45,
+                                minRotation: horizontal ? 0 : 0
+                            }
+                        },
+                        y: {
+                            grid: { 
+                                display: horizontal,
+                                color: 'rgba(226, 232, 240, 0.3)'
+                            },
+                            ticks: { 
+                                font: { size: 12 },
+                                autoSkip: false
+                            },
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    },
+                    layout: {
+                        padding: horizontal ? { left: 10 } : { top: 10 }
+                    }
+                }
+            });
+        }
+        
+
+        window.addEventListener('DOMContentLoaded', function() {
+            createPieChart('chart-promotion', questionsData[0].data);
+            createPieChart('chart-voie-acces', questionsData[1].data);
+            createPieChart('chart-tronc-commun', questionsData[7].data);
+            createPieChart('chart-reformes-influence', questionsData[5].data);
+            createPieChart('chart-approche-competences', questionsData[8].data);
+            createPieChart('chart-reseau', questionsData[10].data);
+            
+            createBarChart('chart-connaissance', questionsData[2].data);
+            createBarChart('chart-attentes', questionsData[4].data);
+            createBarChart('chart-reforme', questionsData[13].data);
+            
+            createBarChart('chart-motivations', questionsData[3].data, true);
+            createBarChart('chart-interessant', questionsData[6].data, true);
+            createBarChart('chart-ameliorations', questionsData[12].data, true);
+            createBarChart('chart-ambiance', questionsData[11].data, true);
+            createBarChart('chart-classement', questionsData[9].data, true);
+        });
+    </script>
+
+
+
+</body></html>
